@@ -1,0 +1,522 @@
+/* Cài box-sizing để không làm thay đổi tổng kích thước box*/
+* {
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #0f1b4c;
+}
+/* Để cho kích thước font chữ mặc định html về 10px để dễ dùng rem */
+html {
+    font-size: 62.5%;
+}
+/* Để cho kích thước font chữ quay lại bằng kích thước mặc định là 16px */
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif; /*Phông chữ chung*/
+}
+/*Common-Thành phần dùng chung*/
+a {
+    text-decoration: none; /*Bỏ gạch chân tất cả thẻ a*/
+}
+.content {
+    /*Thanh ở đầu trang*/
+    width: 1110px;
+    /*Tránh khi kéo 1 trang ngang quá đè lên nội dung*/
+    max-width: calc(100%-48px);
+    margin-left: auto; /*Căn giữa*/
+    margin-right: auto; /*Căn giữa*/
+}
+.btn {
+    display: inline-block;
+    min-width: 98px;
+    background: var(--primary-color);
+    padding: 18px 16px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+}
+.btn:hover {
+    opacity: 0.9; /*Mờ khi di con trỏ chuột vào*/
+}
+.line-clamp {
+    display: -webkit-box; /*4 dòng này để thu gọn và hiện dấu ...*/
+    -webkit-line-clamp: var(--line-clamp, 2);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* ==================== Header ==========================*/
+.header {
+    position: relative;
+    height: 100vh; /*Dùng hết chiều cao của trang, còn chiều ngang k cần ghi sẽ mặc định hết chiều ngang*/
+    background-color: #e6f0ff; /*Màu của trang*/
+}
+.navbar {
+    display: flex; /*Cho 3 thẻ con nằm ngang*/
+    align-items: center; /*Căn giữa flex item giữa flex container*/
+    padding-top: 3.8rem; /*Căn thanh nav xuống dưới*/
+}
+.navbar ul {
+    display: flex; /*Cho 5 thẻ con nằm ngang*/
+    margin-left: 5rem; /*Thêm khoảng cách để logo và navigation cách nhau đúng thiết kế*/
+}
+.navbar .action {
+    margin-left: auto; /*Căn phải 2 nút action */
+}
+.navbar ul a {
+    font-size: 1.4rem; /*Cỡ chữ*/
+    font-weight: 500; /*Độ dầy của chữ*/
+    color: #4f5361; /*Màu chữ*/
+    padding: 0.8rem 1.4rem; /*Để trỏ chuột gần sát vẫn kích hoạt vào a*/
+}
+.navbar ul a:hover {
+    text-decoration: underline; /*Hiện gạch chân khi di con trỏ chuột vào*/
+}
+.navbar .action-link {
+    font-size: 14px; /*Cỡ chữ*/
+    font-weight: 500; /*Độ dầy của chữ*/
+    color: var(--primary-color); /*Màu chữ*/
+}
+.navbar .action-btn {
+    padding: 13px 16px; /*Căn chỉnh thanh Sign-up*/
+    margin-left: 18px; /*Chỉnh khoảng cách giữa 2 nút*/
+}
+.hero {
+    margin-top: 13rem;
+}
+.hero .info {
+    width: 51%;
+}
+.hero .sub-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #687690;
+}
+.hero .title {
+    margin-top: 8px;
+    font-size: 6.2rem;
+    font-weight: 700;
+    line-height: 1.19;
+    color: #000336;
+}
+.hero .desc {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.78;
+    color: #5a6473;
+}
+.hero .hero-cta {
+    min-width: 170px;
+    margin-top: 40px;
+}
+.hero-img {
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+}
+/* ======== Clients ============*/
+.clients {
+    margin-top: 122px;
+}
+.clients .row {
+    display: flex;
+    justify-content: space-between;
+}
+.row .desc2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #7d8589;
+}
+.clients .row-desc {
+    margin-top: 23px;
+}
+.clients .image-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 96px;
+}
+/* ======== Guides ============*/
+.guides {
+    margin-top: 200px;
+}
+.guides .sub-title {
+    position: relative; /*Thắc mắc: Dùng hay k dùng khác gì nhau*/
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    color: #000339;
+}
+.guides .sub-title::before {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    display: inline-block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    background: #000339;
+}
+.guides .desc {
+    width: 459px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88;
+    text-align: center;
+    color: #5a6473;
+}
+.list-guide {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.list-guide li {
+    margin: 0 70px;
+    text-align: center;
+}
+.guide-item .title {
+    margin-top: 26px;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #3b3c45;
+}
+.guide-item .link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0689ff;
+}
+.guide-item .arrow {
+    margin-left: 6px;
+}
+.guide-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.guide-cta .btn {
+    min-width: 170px;
+}
+/* ======== Featured ============*/
+.featured {
+    margin-top: 120px;
+    padding: 110px 0;
+    background-color: #f5fafe;
+}
+.featured .sub-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #000339;
+}
+.featured .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.featured .desc {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88;
+    color: #5a6473;
+}
+.featured .link {
+    color: #0689ff;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.featured .link .arrow-1 {
+    position: relative;
+    top: -2px;
+}
+.featured .list {
+    display: flex;
+    margin-top: 70px;
+    gap: 30px;
+}
+.featured .item {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+}
+.featured .item .thumb {
+    width: 100%;
+    height: 227px;
+    object-fit: cover; /*Giữ nguyên tỉ lệ khung hình*/
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.featured .item .body {
+    padding: 17px 20px 24px;
+}
+.featured .item .title a {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #000339;
+}
+.featured .item .desc {
+    margin-top: 11px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #a3a6ab;
+    --line-clamp: 3;
+    word-break: break-all; /*Tự động bẻ từ khi từ k có dấu cách quá dài khi hết hàng mà k làm hỏng thiết kế*/
+}
+.featured .item .info {
+    display: flex;
+    margin-top: 21px;
+    align-items: center;
+}
+.featured .item .label {
+    margin-left: 8px;
+    color: #4d4d52;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+.featured .item .icon {
+    margin-left: 23px;
+}
+.featured .item .icon:first-child {
+    margin-left: 0;
+}
+/* ======== Stats ============*/
+.stats {
+    margin-top: 75px;
+    padding: 50px 0;
+}
+.stats .content {
+    width: 1048px;
+}
+.stats .img-block,
+.stats .info {
+    width: 50%;
+}
+.stats .img-block {
+    position: relative;
+}
+.stats .img-block .stats-trend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 239px;
+    padding: 45px 22px 40px;
+    border-radius: 0px 0px 12px 12px;
+    background-color: #fff;
+}
+.stats .img-block .stats-img-1 {
+    display: block;
+    margin-left: auto;
+    width: 600px;
+    height: 690px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.stats .info {
+    padding: 79px 0 0 165px;
+}
+.stats .row {
+    display: flex;
+}
+.stats .sub-title {
+    position: relative;
+    width: 269px;
+    color: #000339;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.29;
+}
+.stats .sub-title::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -10px;
+    display: block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    background: #000339;
+}
+.stats .desc {
+    width: 309px;
+    margin-top: 20px;
+    color: #5a6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 30px;
+}
+.stats .img-block .value {
+    color: #000339;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+.stats-trend .icon {
+    margin-left: auto;
+}
+.stats-trend .desc-1 {
+    margin-top: 8px;
+    color: #a7a7a7;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.stats-trend .separate {
+    height: 1.2px;
+    margin-top: 25px;
+    background-color: #e9e9e9;
+}
+.stats .avatar-block {
+    margin-top: 26px;
+    flex-wrap: wrap;
+    gap: 14px 16px;
+    display: flex;
+}
+.stats .avatar-block .avatar-groud {
+    display: flex;
+}
+.stats .avatar-groud .avatar {
+    width: 16px;
+    height: 16px;
+    margin-left: -3px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.stats .avatar-groud .avatar:first-child {
+    margin-left: 0;
+}
+.stats .row-qty {
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0 32px;
+}
+.stats .qty {
+    color: #000;
+    font-size: 6.4rem;
+    font-weight: 600;
+}
+.stats .qty-desc {
+    margin-top: 24px;
+    color: #7b8087;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+/* ======== Subscription ============*/
+.subcription {
+    margin-top: 90px;
+}
+.subcription .body {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 370px;
+    border-radius: 20px;
+    background-color: #063183;
+}
+.subcription .info {
+    width: 671px;
+    padding: 0 80px;
+}
+.subcription .sub-title {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.subcription .desc {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 30px;
+}
+.subcription .btn {
+    margin-top: 20px;
+    min-width: 151px;
+    height: 50px;
+    border-radius: 12px;
+    color: #002366;
+    background: #fff;
+}
+.subcription .image {
+    position: absolute;
+    bottom: 0;
+    right: 221px;
+}
+/*============= Footer ================*/
+.footer {
+    margin-top: 55px;
+    padding: 50px 0 58px;
+}
+.footer .row {
+    display: flex;
+}
+.footer .row-top {
+    gap: 185px;
+}
+.footer .heading {
+    color: #1c1c1d;
+    font-family: "Lato", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.footer .list,
+.footer .desc {
+    margin-top: 42px;
+}
+.footer .item {
+    margin-top: 18px;
+}
+.footer .item a,
+.footer .desc {
+    margin-top: 18px;
+    color: #7a7a7e;
+    font-size: 1.6rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.footer .desc {
+    white-space: normal;
+    line-height: 1.75;
+}
+.footer .social {
+    display: flex;
+    margin-top: 40px;
+}
+.footer .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+.footer .social-link:hover {
+    background: #ccc;
+}
+.footer .row-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 81px;
+}
+.footer .copyright {
+    color: #c2c2c2;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
