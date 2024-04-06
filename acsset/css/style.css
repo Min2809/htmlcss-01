@@ -56,7 +56,9 @@ a {
 }
 .hero-wrap {
     position: relative;
-    height: 100vh; /*Dùng hết chiều cao của trang, còn chiều ngang k cần ghi sẽ mặc định hết chiều ngang*/
+    height: calc(
+        100vh - 90px
+    ); /*Dùng hết chiều cao của trang, còn chiều ngang k cần ghi sẽ mặc định hết chiều ngang*/
     display: flex;
     flex-direction: column;
     background-color: #e6f0ff; /*Màu của trang*/
